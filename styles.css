@@ -1,0 +1,487 @@
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Основные переменные */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+  --text-color: #333;
+  --light-color: #ecf0f1;
+  --header-height: 80px;
+  --heading-font: "Montserrat", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+}
+
+body {
+  font-family: var(--body-font);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Стили для хедера */
+.header {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: var(--header-height);
+  position: relative;
+  z-index: 100;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* Логотип */
+.logo {
+  flex: 0 0 20%;
+}
+
+.logo img {
+  max-height: 90px;
+  display: block;
+}
+
+/* Главное меню */
+.main-nav {
+  flex: 0 0 50%;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s;
+  position: relative;
+  padding: 5px 0;
+  font-family: var(--heading-font);
+  letter-spacing: 0.3px;
+}
+
+.menu a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: var(--accent-color);
+}
+
+.menu a:hover:after,
+.menu a.active:after {
+  width: 100%;
+}
+
+/* Кнопка мобильного меню */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 24px;
+  z-index: 150;
+}
+
+.mobile-menu-button span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  transition: all 0.3s;
+  border-radius: 2px;
+}
+
+.mobile-menu-button span:nth-child(1) {
+  top: 0;
+}
+
+.mobile-menu-button span:nth-child(2) {
+  top: 10px;
+}
+
+.mobile-menu-button span:nth-child(3) {
+  top: 20px;
+}
+
+/* Стили для открытого мобильного меню */
+.mobile-menu-button.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+}
+
+.mobile-menu-button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-button.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 10px;
+}
+
+/* Контактная информация */
+.contact-info {
+  flex: 0 0 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 14px;
+}
+
+.address {
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.email i {
+  margin-right: 5px;
+}
+
+.email:hover {
+  color: var(--primary-color);
+}
+
+/* Основное содержимое */
+.section {
+  padding: 60px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 60px;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Общие стили для заголовков h2 */
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 24px;
+  position: relative;
+  padding-left: 15px;
+  letter-spacing: 0.3px;
+}
+
+h2:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Стили для раздела "Общая информация" */
+.info-section {
+  background-color: #fff;
+}
+
+/* Новая структура информационного блока - два блока рядом */
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.info-column {
+  flex: 1 1 calc(50% - 15px);
+  min-width: 280px;
+}
+
+.info-column p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.more-info {
+  margin-top: 20px;
+}
+
+.more-info a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--heading-font);
+  font-size: 14px;
+}
+
+.more-info a i {
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+.more-info a:hover {
+  color: var(--primary-color);
+}
+
+.more-info a:hover i {
+  transform: translateX(5px);
+}
+
+/* Блок целей */
+.goals-block {
+  margin-top: 50px;
+}
+
+/* Отдельные стили для заголовка в блоке целей */
+.goals-block h2 {
+  text-align: center;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.goals-block h2:before {
+  display: none;
+}
+
+/* Альтернативное оформление с линиями по бокам для заголовка Цели */
+.goals-block h2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goals-block h2:before,
+.goals-block h2:after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 50px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  position: static;
+  margin: 0 15px;
+}
+
+.goals-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.goal-item {
+  flex: 1 1 calc(25% - 30px);
+  min-width: 250px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.goal-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.goal-icon {
+  font-size: 40px;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.goal-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.goal-item p {
+  line-height: 1.6;
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+/* Общие стили кнопок */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--heading-font);
+  transition: all 0.3s;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Футер */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  padding: 30px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .header {
+    height: auto;
+    padding: 15px 0;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .header__content {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    flex: 0 0 80%;
+  }
+
+  .logo img {
+    max-height: 60px;
+  }
+
+  .main-nav {
+    flex: 0 0 100%;
+    order: 3;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .main-nav.open {
+    max-height: 300px;
+    margin-top: 15px;
+  }
+
+  .menu {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .menu li {
+    margin: 8px 0;
+  }
+
+  .contact-info {
+    flex: 0 0 100%;
+    order: 2;
+    align-items: center;
+    margin-top: 15px;
+    display: none;
+  }
+
+  .contact-info.open {
+    display: flex;
+  }
+
+  .goal-item {
+    flex: 1 1 calc(50% - 30px);
+  }
+
+  /* Адаптация линий для заголовка в блоке целей */
+  .goals-block h2:before,
+  .goals-block h2:after {
+    width: 30px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .goal-item {
+    flex: 1 1 100%;
+  }
+
+  /* Уменьшение линий для маленьких экранов */
+  .goals-block h2:before,
+  .goals-block h2:after {
+    width: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
