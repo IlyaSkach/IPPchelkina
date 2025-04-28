@@ -1,0 +1,296 @@
+/* Основные стили для страницы "Обо мне" */
+.about-section {
+  padding: 60px 0;
+  background-color: #fff;
+  position: relative;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.about-header h1 {
+  font-size: 36px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.about-header h1:before,
+.about-header h1:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-color);
+  transform: translateY(-50%);
+}
+
+.about-header h1:before {
+  left: -70px;
+}
+
+.about-header h1:after {
+  right: -70px;
+}
+
+.experience-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+  z-index: 10;
+}
+
+.experience-badge i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+/* Блоки контента */
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.education-block,
+.certificates-block,
+.expertise-block,
+.quality-block {
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.education-block {
+  animation-delay: 0.2s;
+}
+
+.certificates-block {
+  animation-delay: 0.4s;
+}
+
+.expertise-block {
+  animation-delay: 0.6s;
+}
+
+.quality-block {
+  animation-delay: 0.8s;
+}
+
+/* Стили для образования */
+.education-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+}
+
+.education-item i {
+  font-size: 40px;
+  color: var(--accent-color);
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.education-text h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* Стили для сертификатов */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.certificate-item {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+  display: flex;
+  align-items: flex-start;
+}
+
+.certificate-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-item i {
+  color: var(--accent-color);
+  font-size: 24px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+/* Стили для областей экспертизы */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.expertise-item {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.expertise-item:hover {
+  transform: translateX(10px);
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.expertise-item:hover i {
+  color: white;
+}
+
+.expertise-item i {
+  color: var(--accent-color);
+  margin-right: 15px;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+/* Стили для блока качества */
+.quality-item {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.quality-item:hover {
+  transform: translateY(-5px);
+}
+
+.quality-item i {
+  font-size: 40px;
+  color: var(--accent-color);
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .about-header h1:before,
+  .about-header h1:after {
+    width: 30px;
+  }
+
+  .about-header h1:before {
+    left: -50px;
+  }
+
+  .about-header h1:after {
+    right: -50px;
+  }
+
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .experience-badge {
+    position: relative;
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-header h1 {
+    font-size: 28px;
+  }
+
+  .about-header h1:before,
+  .about-header h1:after {
+    display: none;
+  }
+
+  .education-item,
+  .quality-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .education-item i,
+  .quality-item i {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .certificate-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .certificate-item i {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .expertise-item {
+    padding: 15px;
+  }
+
+  .experience-badge {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}

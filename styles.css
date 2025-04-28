@@ -166,9 +166,22 @@ body {
   font-size: 14px;
 }
 
-.address {
+.phone {
   color: var(--secondary-color);
   margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.phone i {
+  margin-right: 5px;
+  color: var(--accent-color);
+}
+
+.phone:hover {
+  color: var(--accent-color);
 }
 
 .email {
@@ -284,32 +297,23 @@ h2:before {
   transform: translateX(5px);
 }
 
-/* Блок целей */
-.goals-block {
-  margin-top: 50px;
+/* Стили для раздела "Преимущества" */
+.advantages-block {
+  margin-top: 30px;
 }
 
-/* Отдельные стили для заголовка в блоке целей */
-.goals-block h2 {
+.advantages-block h2 {
   text-align: center;
+  margin-bottom: 40px;
   padding-left: 0;
-  margin-bottom: 30px;
-}
-
-.goals-block h2:before {
-  display: none;
-}
-
-/* Альтернативное оформление с линиями по бокам для заголовка Цели */
-.goals-block h2 {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.goals-block h2:before,
-.goals-block h2:after {
+.advantages-block h2:before,
+.advantages-block h2:after {
   content: "";
   display: block;
   height: 4px;
@@ -320,46 +324,75 @@ h2:before {
   margin: 0 15px;
 }
 
-.goals-container {
+.advantages-container {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
 }
 
-.goal-item {
+.advantage-item {
   flex: 1 1 calc(25% - 30px);
   min-width: 250px;
-  background-color: white;
+  background-color: #fff;
+  padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-  padding: 25px 20px;
-  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.goal-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+.advantage-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.goal-icon {
+.advantage-icon {
   font-size: 40px;
   color: var(--accent-color);
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-.goal-item h3 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
+.advantage-item h3 {
   font-size: 18px;
-  letter-spacing: 0.2px;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
-.goal-item p {
-  line-height: 1.6;
-  color: var(--text-color);
+.advantage-item p {
   font-size: 14px;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Стили для раздела "Цели" */
+.goals-block {
+  margin-top: 30px;
+}
+
+/* Стили для выделенного текста */
+.main-description {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.highlight-text {
+  font-family: var(--heading-font);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--primary-color);
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Класс для полной ширины */
+.full-width {
+  flex: 1 1 100%;
 }
 
 /* Общие стили кнопок */
@@ -449,13 +482,21 @@ h2:before {
     display: flex;
   }
 
+  .phone,
+  .email {
+    margin: 5px 0;
+  }
+
   .goal-item {
     flex: 1 1 calc(50% - 30px);
   }
 
-  /* Адаптация линий для заголовка в блоке целей */
-  .goals-block h2:before,
-  .goals-block h2:after {
+  .advantage-item {
+    flex: 1 1 calc(50% - 30px);
+  }
+
+  .advantages-block h2:before,
+  .advantages-block h2:after {
     width: 30px;
   }
 
@@ -470,9 +511,12 @@ h2:before {
     flex: 1 1 100%;
   }
 
-  /* Уменьшение линий для маленьких экранов */
-  .goals-block h2:before,
-  .goals-block h2:after {
+  .advantage-item {
+    flex: 1 1 100%;
+  }
+
+  .advantages-block h2:before,
+  .advantages-block h2:after {
     width: 20px;
   }
 
@@ -483,5 +527,9 @@ h2:before {
 
   h2 {
     font-size: 20px;
+  }
+
+  .highlight-text {
+    font-size: 22px;
   }
 }
