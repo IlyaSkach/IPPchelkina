@@ -132,7 +132,9 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .certificate-item:hover {
@@ -147,6 +149,12 @@
   flex-shrink: 0;
 }
 
+.certificate-text {
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* Стили для областей экспертизы */
 .expertise-grid {
   display: grid;
@@ -156,7 +164,9 @@
 
 .expertise-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   background-color: #f8f9fa;
   padding: 20px;
   border-radius: 10px;
@@ -178,6 +188,12 @@
   margin-right: 15px;
   font-size: 20px;
   transition: color 0.3s;
+}
+
+.expertise-text {
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Стили для блока качества */
