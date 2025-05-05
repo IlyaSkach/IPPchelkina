@@ -41,7 +41,7 @@
 .experience-badge {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   display: inline-flex;
   align-items: center;
   background-color: var(--accent-color);
@@ -250,6 +250,13 @@
     margin: 20px auto;
     display: block;
     width: fit-content;
+    top: auto;
+    left: auto;
+    right: auto;
+  }
+
+  .about-header {
+    padding-top: 20px;
   }
 }
 
