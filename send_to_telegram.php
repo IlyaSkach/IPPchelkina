@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Конфигурация Telegram бота
-$botToken = "7869221801:AAGG2HXp7s6AtKkWmxTkLrQ6Ys95h-ziqjU"; // Токен бота
+$botToken = "8052536461:AAF4YLjISdq_dOiCGQtp-GDlLVtkHBHwDnU"; // Токен бота
 $chatId = "87625346"; // ID чата для личного сообщения (без префикса)
 
 // Заголовки для предотвращения кэширования

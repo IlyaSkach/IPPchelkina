@@ -532,23 +532,6 @@ function closeAgreementModal() {
   }, 300); // Время должно совпадать с длительностью transition в CSS
 }
 
-function showPrivacyPolicyModal() {
-  const modal = document.getElementById("privacy-policy-modal");
-  modal.style.display = "flex";
-  // Добавляем небольшую задержку перед добавлением класса show для анимации
-  setTimeout(() => {
-    modal.classList.add("show");
-  }, 10);
-}
-
-function closePrivacyPolicyModal() {
-  const modal = document.getElementById("privacy-policy-modal");
-  modal.classList.remove("show");
-  setTimeout(() => {
-    modal.style.display = "none";
-  }, 300);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   // Обработчик для кнопки
   const startQuizBtn = document.getElementById("startQuizBtn");
